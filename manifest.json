@@ -1,0 +1,10 @@
+﻿{
+  "Name": "Star Factory",
+  "Author": "Jonah Akinboboa and Andrew Powell",
+  "Version": "1.0.0",
+  "Description": "Magical creatures, new buildings, monster taming, oh and also a whole new town to explore",
+  "UniqueID": "Memnun.StarFactory",
+  "EntryDll": "StarFactory.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}
