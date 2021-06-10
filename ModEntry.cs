@@ -17,7 +17,7 @@ namespace StarFactory
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+            helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
         }
 
 
@@ -35,6 +35,12 @@ namespace StarFactory
 
             // print button presses to the console window
             this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+        }
+
+        private void OnSaveLoaded(object sender, SaveLoadedEventArgs args)
+        {
+            GameLocation DeepPath = new GameLocation(this.Helper.Content.GetActualAssetKey("assets/DeepPath.tmx", ContentSource.ModFolder), "DeepPath") {IsOutdoors = true, IsFarm = false};
+            Game1.locations.Add(DeepPath);
         }
     }
 }
